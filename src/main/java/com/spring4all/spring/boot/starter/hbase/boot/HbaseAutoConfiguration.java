@@ -26,7 +26,7 @@ public class HbaseAutoConfiguration {
     private static final String HBASE_ROOTDIR = "hbase.rootdir";
     private static final String HBASE_ZNODE_PARENT = "zookeeper.znode.parent";
 
-    private static final String HBASE_REGIONSERVER_LEASE_PERIOD = "hbase.regionserver.lease.period";
+    private static final String HBASE_REGIONSERVER_LEASE_PERIOD = "hbase.client.scanner.timeout.period";
 
     @Autowired
     private HbaseProperties hbaseProperties;
