@@ -6,7 +6,7 @@
 
     <groupId>com.spring4all</groupId>
     <artifactId>spring-boot-starter-hbase</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>spring-boot-starter-hbase</name>
     <url>https://github.com/SpringForAll/spring-boot-starter-hbase</url>
@@ -90,15 +90,54 @@
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
+<!--     <repositories>
         <repository>
             <id>cloudera repository</id>
             <url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
         </repository>
-    </repositories>
-
+    </repositories>-->
+<repositories> 
+		<repository>
+			<id>snapshots</id>
+			<name>nexus repository</name>
+			<url>http://jira.feezu.cn:8085/nexus/content/repositories/snapshots</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>thridpaty</id>
+			<name>nexus repository</name>
+			<url>http://jira.feezu.cn:8085/nexus/content/repositories/thridparty</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://jira.feezu.cn:8085/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://jira.feezu.cn:8085/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
     <build>
         <plugins>
+        	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

@@ -18,6 +18,8 @@ public class HbaseProperties {
 
     private String nodeParent;
 
+    private String regionserverLeasePeriod;
+    
     public String getQuorum() {
         return quorum;
     }
@@ -41,4 +43,13 @@ public class HbaseProperties {
     public void setNodeParent(String nodeParent) {
         this.nodeParent = nodeParent;
     }
+
+	public String getRegionserverLeasePeriod() {
+		return regionserverLeasePeriod;
+	}
+
+	public void setRegionserverLeasePeriod(String regionserverLeasePeriod) {
+		this.regionserverLeasePeriod = regionserverLeasePeriod;
+	}
+    
 }
